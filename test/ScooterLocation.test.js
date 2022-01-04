@@ -17,4 +17,10 @@ describe('Scooter Location Object methods', () => {
     test('Adding a station to list', () => {
         expect(KingCounty.allStations).toEqual(expect.arrayContaining(['Seattle']))
     })
+    
+
+    test('searching for a station', () => {
+        expect(KingCounty.findStation('Redmond')).toBe('Redmond') 
+        expect(KingCounty.findStation('Greenwood')).toBe('This station does not exist') 
+    })
 })

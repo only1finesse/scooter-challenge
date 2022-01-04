@@ -12,15 +12,13 @@ class ScooterLocation {
     }
 
     findStation(station) {
-        resultIndex = this.allStations.find(station)
-        if (resultIndex) {
-            return resultIndex
-        } else {
+        const result = this.allStations.find( element => element === station)
+        if ( result === undefined ) {
             return "This station does not exist"
+        } else {
+            return result
         }
     }
-
-
 
 }
 

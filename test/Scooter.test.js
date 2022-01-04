@@ -1,4 +1,4 @@
-const { expect } = require('@jest/globals');
+const { expect, test } = require('@jest/globals');
 const Scooter = require('../src/Scooter');
 const User = require('../src/User');
 
@@ -41,6 +41,12 @@ describe('Scooter Object Methods', () => {
     test('scooter battery should charge when prompted', () => {
         testScooter3.charge()
         expect(testScooter3.charged).toBeTruthy;
+    })
+
+    test('scooter station is changed after return to different station', () => {
+        testScooter1.rent()
+        testScooter1.returnScooter('Redmond')
+        expect(testScooter1.station).toBe('Redmond')
     })
 
 })
