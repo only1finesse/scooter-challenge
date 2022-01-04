@@ -5,6 +5,11 @@ class Scooter {
         this.broken = false;
     }
 
+    returnScooter(station) {
+        this.station = station;
+        return this.scooter
+    }
+
     rent() {
         if (this.charged && this.broken == false) { //Equivalent to: if(this.charged == true)
             this.station = ''       //Scooter does not have a station since it is rented
@@ -19,10 +24,6 @@ class Scooter {
     markBroken() {
         this.broken = true;
         return "This Scooter is broken, please select a new one from station";
-    }
-
-    returnScooter(station) {
-        this.scooter = station;
     }
 
     async charge() {

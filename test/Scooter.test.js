@@ -45,7 +45,9 @@ describe('Scooter Object Methods', () => {
 
     test('scooter station is changed after return to different station', () => {
         testScooter1.rent()
+        // console.log(testScooter1.station)
         testScooter1.returnScooter('Redmond')
+        // console.log(testScooter1.station)
         expect(testScooter1.station).toBe('Redmond')
     })
 
